@@ -1,0 +1,32 @@
+<form name="addcrag" class="box" action="/dashboard/addcrag" onsubmit="return validateForm()" method="POST">
+  <div class="field is-horizontal">
+    <div class="field-body">
+    <div class="field">
+    <label class="label">Crag Name</label> <input class="input" type="text" placeholder="Enter crag name" name="title">
+  </div>
+    <div class="field">
+    <label class="label">Latitude</label> <input class="input" type="number" placeholder="00.00" step=".01" min="-90" max="90" name="lat">
+  </div>
+   <div class="field">
+     <label class="label">Longitude</label> <input class="input" type="number" placeholder="00.00" step=".01" min="-180" max="180" name="lng">
+    </div>
+    <div class="field">
+     <label class="label">Approach</label> <input class="input" type="text" placeholder="Enter approach description" name="approach">
+    </div>
+    </div>
+    </div>
+  <button class="button is-link">Add Crag</button>
+</form>
+ 
+<!-- https://www.w3schools.com/howto/howto_js_validation_empty_input.asp-->
+<script>
+    function validateForm() {
+        var cragname = document.forms["addcrag"]["title"].value;
+        var latitude = document.forms["addcrag"]["lat"].value;
+        var longitude = document.forms["addcrag"]["lng"].value;
+        if ((cragname == "" || cragname == null) || (latitude == "" || latitude == null) || (longitude == "" || longitude == null)) {
+            alert("All fields must be filled in");
+            return false;
+        }
+    }
+</script>

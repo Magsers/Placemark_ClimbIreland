@@ -1,0 +1,23 @@
+<form class="box" action="/crag/{{crag._id}}/addroute" method="POST">
+  <label>Enter Route Details:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="Route Name" name="route">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Grade" name="grade">
+      </div>
+      <div class="field">
+        <input class="input" type="number" placeholder="Enter Height in metres" name="height">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="First Ascent (optional)" name="firstascent">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Description" name="description">
+      </div>
+    </div> 
+  </div>
+  <button class="button is-primary">Add Route</button>
+</form>

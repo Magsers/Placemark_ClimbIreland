@@ -1,0 +1,37 @@
+
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Crag</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Approach</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each crags}}
+  <tr>
+    <td>  
+      <h2 class="title">
+       {{title}}</h2>
+       </td>
+      <td> {{lat}} </td>
+     <td> {{lng}} </td>
+      <td> {{approach}} </td>
+    <td>
+    <a href="/crag/{{_id}}" class="button">
+      <span class="icon is-small">
+        <i class="fas fa-folder-open"></i>
+      </span>
+    </a>
+    </td>
+    <td>
+    <a href="/dashboard/deleteCrag/{{_id}}" class="button">
+      <span class="icon is-small"></span>
+      <i class="fas fa-trash-alt"></i>
+    </a>
+    </td>
+    </tr>
+ {{/each}}
+  </tbody>
+</table>

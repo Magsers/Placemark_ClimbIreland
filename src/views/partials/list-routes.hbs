@@ -1,0 +1,37 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Route</th>
+      <th>Grade</th>
+      <th>Height</th>
+      <th>First Ascent</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each crag.routes}}
+      <tr>
+        <td>
+          {{route}}
+        </td>
+        <td> 
+          {{grade}}
+        </td>
+         <td>
+          {{height}}
+        </td>
+        <td>
+          {{firstascent}}
+        </td>
+        <td>
+          {{description}}
+        </td>
+        <td>
+         <a href="/crag/{{../crag._id}}/deleteroute/{{_id}}" class="ui icon button">
+                <i class="fas fa-trash-alt"></i>
+            </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
