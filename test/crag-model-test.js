@@ -1,11 +1,12 @@
 import { assert } from "chai";
 import { db } from "../src/models/db.js";
 import { burren, testCrags } from "./fixtures.js";
+import { assertSubset } from "./test-utils.js";
 
 suite("Crag Model tests", () => {
 
   setup(async () => {
-    db.init("");
+    db.init("mongo");
     await db.cragStore.deleteAllCrags();
     for (let i = 0; i < testCrags.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
@@ -15,7 +16,7 @@ suite("Crag Model tests", () => {
 
   test("create a crag", async () => {
     const crag = await db.cragStore.addCrag(burren);
-    assert.equal(burren, crag);
+    assertSubset(burren, crag);
     assert.isDefined(crag._id);
   }); 
 
@@ -30,7 +31,7 @@ suite("Crag Model tests", () => {
   test("get a crag - success", async () => {
     const crag = await db.cragStore.addCrag(burren);
     const returnedCrag = await db.cragStore.getCragById(crag._id);
-    assert.equal(burren, crag);
+    assertSubset(burren, crag);
   });
 
   test("delete One Crag - success", async () => {

@@ -29,6 +29,18 @@ export const maggie = {
   export const burren = {
     title: "The Burren"
   };
+
+  export const fairhead = {
+    title: "Fairhead"
+  };
+
+  export const jugcity = {
+    "route": "Jug City",
+    "grade": "VS",
+    "height": 15,
+    "firstascent": "Ricky Bell",
+    "description": "Juggy"
+  };
    
   export const testCrags = [
     {
@@ -39,5 +51,17 @@ export const maggie = {
     },
     {
       title: "Glendalough"
+    }
+  ];
+
+  export const testRoutes = [
+    {
+      route: "Lisdoonfarout"
+    },
+    {
+      route: "Moonrill"
+    },
+    {
+      route: "An Bonain Bui"
     }
   ];
