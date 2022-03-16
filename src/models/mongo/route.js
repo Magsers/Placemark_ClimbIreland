@@ -4,7 +4,7 @@ const { Schema } = Mongoose;
 
 const routeSchema = new Schema({
   route: String,
-  grade: Number,
+  grade: String,
   height: Number,
   firstascent: String,
   description: String,

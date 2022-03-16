@@ -35,11 +35,11 @@ export const maggie = {
   };
 
   export const jugcity = {
-    "route": "Jug City",
-    "grade": "VS",
-    "height": 15,
-    "firstascent": "Ricky Bell",
-    "description": "Juggy"
+    route: "Jug City",
+    grade: "VS",
+    height: 15,
+    firstascent: "Ricky Bell",
+    description: "Juggy"
   };
    
   export const testCrags = [
@@ -56,12 +56,24 @@ export const maggie = {
 
   export const testRoutes = [
     {
-      route: "Lisdoonfarout"
+      route: "Lisdoonfarout",
+      grade: "HS",
+      height: 10,
+      firstascent: "Dave Ayton",
+      description: "easy"
     },
     {
-      route: "Moonrill"
+      route: "Moonrill",
+      grade: "HVS",
+      height: 25,
+      firstascent: "Richard Doody",
+      description: "chimney climb, very exposed"
     },
     {
-      route: "An Bonain Bui"
+      route: "An Bonain Bui",
+      grade: "VS",
+      height: 20,
+      firstascent: "Vicky Cleary",
+      description: "polished"
     }
   ];

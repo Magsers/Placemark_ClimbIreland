@@ -2,7 +2,7 @@ import { Route } from "./route.js";
 
 export const routeMongoStore = {
   async getAllRoutes(id) {
-    const routes = await Route.find({ cragid: id }).lean();
+    const routes = await Route.find().lean();
     return routes;
   },
 
