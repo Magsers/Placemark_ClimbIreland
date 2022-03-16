@@ -77,3 +77,5 @@ export const maggie = {
       description: "polished"
     }
   ];
+
+  export const serviceUrl = "http://localhost:3000";
