@@ -24,7 +24,8 @@
         var cragname = document.forms["addcrag"]["title"].value;
         var latitude = document.forms["addcrag"]["lat"].value;
         var longitude = document.forms["addcrag"]["lng"].value;
-        if ((cragname == "" || cragname == null) || (latitude == "" || latitude == null) || (longitude == "" || longitude == null)) {
+        var approach = document.forms["addcrag"]["approach"].value;
+        if ((cragname == "" || cragname == null) || (latitude == "" || latitude == null) || (longitude == "" || longitude == null) || (approach == "" || approach == null)) {
             alert("All fields must be filled in");
             return false;
         }

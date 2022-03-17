@@ -20,4 +20,6 @@ export const webRoutes = [
   { method: "POST", path: "/crag/{id}/addroute", config: cragController.addRoute },
   { method: "GET", path: "/dashboard/deleteCrag/{id}", config: dashboardController.deleteCrag },
   { method: "GET", path: "/crag/{id}/deleteroute/{routeid}", config: cragController.deleteRoute },
+
+  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
 ]; 

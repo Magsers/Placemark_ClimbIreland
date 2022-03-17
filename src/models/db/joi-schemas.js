@@ -14,25 +14,23 @@ export const UserSpec = {
   password: Joi.string().required(),
 };
 
-export const RouteSpec = Joi.object()
-  .keys({
-    route: Joi.string().required().example("Jug City"),
-    grade: Joi.string().required().example("VS"),
-    height: Joi.number().allow("").optional().example(12),
-    firstascent: Joi.string().allow("").optional().example("Ricky Bell"),
-    description: Joi.string().allow("").optional().example("Jugs all the way"),
-  })
-  .label("Route");
+export const RouteSpec = {
+    route: Joi.string().required(),
+    grade: Joi.string().required(),
+    height: Joi.number().allow("").optional(),
+    firstascent: Joi.string().allow("").optional(),
+    description: Joi.string().allow("").optional(),
+  };
+  // .label("Route");
 
   export const RouteArraySpec = Joi.array().label("RouteArray");
 
-  export const CragSpec = Joi.object()
-  .keys({
-    title: Joi.string().required().example("The Burren"),
-    lat: Joi.number().required().example("20.00"),
-    lng: Joi.number().required().example("20.00"),
-    approach: Joi.string().optional().example("Approach through coastal route SW of parking area."),
+  export const CragSpec = {
+    title: Joi.string().required(),
+    lat: Joi.number().required(),
+    lng: Joi.number().required(),
+    approach: Joi.string().optional(),
     // userid: IdSpec,
-    routes: RouteArraySpec,
-  })
-  .label("Crag");
+    // routes: RouteArraySpec,
+  };
+ // .label("Crag");

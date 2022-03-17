@@ -1,4 +1,5 @@
 import { Route } from "./route.js";
+import { Crag } from "./crag.js";
 
 export const routeMongoStore = {
   async getAllRoutes(id) {

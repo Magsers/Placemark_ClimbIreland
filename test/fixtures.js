@@ -27,11 +27,17 @@ export const maggie = {
   ];
 
   export const burren = {
-    title: "The Burren"
+    "title": "The Burren",
+    "lat": 20.00,
+    "lng": 20.00,
+    "approach": "by abseil"
   };
 
   export const fairhead = {
-    title: "Fairhead"
+    title: "Fairhead",
+    lat: 10.00,
+    lng: 10.00,
+    approach: "path"
   };
 
   export const jugcity = {
@@ -44,13 +50,22 @@ export const maggie = {
    
   export const testCrags = [
     {
-      title: "Dunsheen Head"
+      "title": "Dunsheen Head",
+      "lat": 20.00,
+      "lng": 20.00,
+      "approach": "by abseil"
     },
     {
-      title: "Gap of Dunloe"
+      "title": "Gap of Dunloe",
+      "lat": 20.00,
+      "lng": 20.00,
+      "approach": "by abseil"
     },
     {
-      title: "Glendalough"
+      "title": "Glendalough",
+      "lat": 20.00,
+      "lng": 20.00,
+      "approach": "by abseil"
     }
   ];
 

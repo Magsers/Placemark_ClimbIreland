@@ -24,7 +24,7 @@ export const cragMongoStore = {
     return this.getCragById(cragObj._id);
   },
 
-  async getUserCrag(id) {
+  async getUserCrags(id) {
     const crag = await Crag.find({ userid: id }).lean();
     return crag;
   },
