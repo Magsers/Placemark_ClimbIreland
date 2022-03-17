@@ -2,7 +2,7 @@ import { assert } from "chai";
 import { placemarkService } from "./placemark-service.js";
 import { assertSubset } from "../test-utils.js";
 
-import { maggie, burren, testCrags } from "../fixtures.js";
+import { maggie, fairhead, testCrags } from "../fixtures.js";
 
 suite("Crag API tests", () => {
 
@@ -12,19 +12,19 @@ suite("Crag API tests", () => {
     await placemarkService.deleteAllCrags();
     await placemarkService.deleteAllUsers();
     user = await placemarkService.createUser(maggie);
-    burren.userid = user._id;
+    fairhead.userid = user._id;
   });
 
   teardown(async () => {});
 
   test("create crag", async () => {
-    const returnedCrag = await placemarkService.createCrag(burren);
+    const returnedCrag = await placemarkService.createCrag(fairhead);
     assert.isNotNull(returnedCrag);
-    assertSubset(burren, returnedCrag);
+    assertSubset(fairhead, returnedCrag);
   });
 
   test("delete a crag", async () => {
-    const crag = await placemarkService.createCrag(burren);
+    const crag = await placemarkService.createCrag(fairhead);
     const response = await placemarkService.deleteCrag(crag._id);
     assert.equal(response.status, 204);
     try {

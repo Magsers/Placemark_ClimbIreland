@@ -3,6 +3,7 @@ import Vision from "@hapi/vision";
 import Cookie from "@hapi/cookie";
 import Inert from "@hapi/inert";
 import dotenv from "dotenv";
+import HapiSwagger from "hapi-swagger";
 import Handlebars from "handlebars";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -21,6 +22,13 @@ if (result.error) {
   process.exit(1);
 }
 
+const swaggerOptions = {
+  info: {
+    title: "Placemark API",
+    version: "0.1",
+  },
+};
+
 async function init() {
   const server = Hapi.server({
     port: 3000,
@@ -29,6 +37,15 @@ async function init() {
   
   await server.register(Vision);
   await server.register(Inert);
+  await server.register([
+    Inert,
+    Vision,
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions,
+    },
+  ]);
+
   server.views({
     engines: {
       hbs: Handlebars,
@@ -55,7 +72,7 @@ async function init() {
 
   server.validator(Joi);
 
-  db.init("mongo");
+  db.init("json");
   server.route(webRoutes);
   server.route(apiRoutes);
   await server.start();

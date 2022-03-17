@@ -29,8 +29,8 @@ export const dashboardController = {
       const newCrag = {
         userid: loggedInUser._id,
         title: request.payload.title,
-        lat: request.payload.lat,
-        lng: request.payload.lng,
+        lat: Number(request.payload.lat),
+        lng: Number(request.payload.lng),
         approach: request.payload.approach,
       };
       await db.cragStore.addCrag(newCrag);
@@ -40,10 +40,9 @@ export const dashboardController = {
 
   deleteCrag: {
     handler: async function (request, h) {
-    const cragId = request.params.id;
-    cragMemStore.deleteCragById(cragId);
+    const crag = await db.cragStore.getCragById(request.params.id);
+    await db.cragStore.deleteCragById(crag._id);
     return h.redirect("/dashboard");
     },
   },
-
 };

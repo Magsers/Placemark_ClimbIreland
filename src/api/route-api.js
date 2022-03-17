@@ -1,23 +1,23 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
-// import { IdSpec, RouteSpec,RouteSpecPlus, RouteArraySpec } from "../models/db/joi-schemas.js";
-// import { validationError } from "../logger.js";
+import { IdSpec, RouteSpec, RouteSpecPlus, RouteArraySpec } from "../models/db/joi-schemas.js";
+import { validationError } from "../logger.js";
 
 export const routeApi = {
     find: {
       auth: false,
-    handler: async function (request, h) {
-      try {
+      handler: async function (request, h) {
+       try {
         const routes = await db.routeStore.getAllRoutes();
         return routes;
-      } catch (err) {
+       } catch (err) {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    // tags: ["api"],
-    // response: { schema: RouteArraySpec, failAction: validationError },
-    // description: "Get all routeApi",
-    // notes: "Returns all routeApi",
+    tags: ["api"],
+    response: { schema: RouteArraySpec, failAction: validationError },
+    description: "Get all routeApi",
+    notes: "Returns all routeApi",
   },
 
   findOne: {
@@ -33,11 +33,11 @@ export const routeApi = {
         return Boom.serverUnavailable("No route with this id");
       }
     },
-    // tags: ["api"],
-    // description: "Find a Route",
-    // notes: "Returns a route",
-    // validate: { params: { id: IdSpec }, failAction: validationError },
-    // response: { schema: RouteSpecPlus, failAction: validationError },
+    tags: ["api"],
+    description: "Find a Route",
+    notes: "Returns a route",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: RouteSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -53,11 +53,11 @@ export const routeApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    // tags: ["api"],
-    // description: "Create a route",
-    // notes: "Returns the newly created route",
-    // validate: { payload: RouteSpec },
-    // response: { schema: RouteSpecPlus, failAction: validationError },
+    tags: ["api"],
+    description: "Create a route",
+    notes: "Returns the newly created route",
+    validate: { payload: RouteSpec },
+    response: { schema: RouteSpecPlus, failAction: validationError },
   },
 
   deleteAll: {
@@ -70,8 +70,8 @@ export const routeApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    // tags: ["api"],
-    // description: "Delete all routeApi",
+    tags: ["api"],
+    description: "Delete all routeApi",
   },
 
    deleteOne: {
@@ -88,8 +88,8 @@ export const routeApi = {
         return Boom.serverUnavailable("No Route with this id");
       }
      },
-//     tags: ["api"],
-//     description: "Delete a route",
-//     validate: { params: { id: IdSpec }, failAction: validationError },
+    tags: ["api"],
+    description: "Delete a route",
+    validate: { params: { id: IdSpec }, failAction: validationError },
    },
 };

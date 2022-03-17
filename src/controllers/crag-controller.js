@@ -18,7 +18,7 @@ export const cragController = {
       payload: RouteSpec,
       options: { abortEarly: false },
       failAction: function (request, h, error) {
-        return h.view("crag-view", { title: "Add route error", errors: error.details }).takeover().code(400);
+        return h.view("crag-view", { title: "Add Route error", errors: error.details }).takeover().code(400);
       },
     },
     handler: async function (request, h) {

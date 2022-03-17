@@ -12,19 +12,18 @@ suite("Route API tests", () => {
     // user = await placemarkService.createUser(maggie);
     // await placemarkService.authenticate(maggie);
      await placemarkService.deleteAllCrags();
-     await placemarkService.deleteAllRoutes();
      await placemarkService.deleteAllUsers();
+     await placemarkService.deleteAllRoutes();
      user = await placemarkService.createUser(maggie);
     // await placemarkService.authenticate(maggie);
      burren.userid = user._id;
      ballyryan = await placemarkService.createCrag(burren);
   });
-
   teardown(async () => {});
 
   test("create route", async () => {
-    const returnedRoute = await placemarkService.createRoute(ballyryan._id, concerto);
-    assertSubset(concerto, returnedRoute);
+    const returnedRoute = await placemarkService.createRoute(ballyryan._id, jugcity);
+    assertSubset(jugcity, returnedRoute);
   });
 
   test("create Multiple routes", async () => {
