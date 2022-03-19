@@ -3,7 +3,7 @@ import Mongoose from "mongoose";
 const { Schema } = Mongoose;
 
 const routeSchema = new Schema({
-  route: String,
+  name: String,
   grade: String,
   height: Number,
   firstascent: String,

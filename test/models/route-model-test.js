@@ -8,7 +8,7 @@ suite("Route Model tests", () => {
   let burrenList = null;
 
   setup(async () => {
-    db.init("mongo");
+    db.init("json");
     await db.cragStore.deleteAllCrags();
     await db.routeStore.deleteAllRoutes();
     burrenList = await db.cragStore.addCrag(burren);
@@ -19,7 +19,7 @@ suite("Route Model tests", () => {
   });
 
   test("create single route", async () => {
-    const fairheadList = await db.cragStore.addCrag(burren);
+    const fairheadList = await db.cragStore.addCrag(fairhead);
     const route = await db.routeStore.addRoute(fairheadList._id, jugcity)
     assert.isNotNull(route._id);
     assertSubset (jugcity, route);
@@ -39,8 +39,8 @@ suite("Route Model tests", () => {
   });
 
   test("get a route - success", async () => {
-    const fairheadList = await db.cragStore.addCrag(burren);
-    const route = await db.routeStore.addRoute(burrenList._id, jugcity)
+    const fairheadList = await db.cragStore.addCrag(fairhead);
+    const route = await db.routeStore.addRoute(fairheadList._id, jugcity)
     const newRoute = await db.routeStore.getRouteById(route._id);
     assertSubset (jugcity, newRoute);
   });
@@ -49,7 +49,7 @@ suite("Route Model tests", () => {
     const id = testRoutes[0]._id;
     await db.routeStore.deleteRoute(id);
     const routes = await db.routeStore.getAllRoutes();
-    assert.equal(routes.length, testCrags.length - 1);
+    assert.equal(routes.length, testRoutes.length - 1);
     const deletedRoute = await db.routeStore.getRouteById(id);
     assert.isNull(deletedRoute);
   });
@@ -62,6 +62,6 @@ suite("Route Model tests", () => {
   test("delete One User - fail", async () => {
     await db.routeStore.deleteRoute("bad-id");
     const routes = await db.routeStore.getAllRoutes();
-    assert.equal(routes.length, testCrags.length);
+    assert.equal(routes.length, testRoutes.length);
   });
 });

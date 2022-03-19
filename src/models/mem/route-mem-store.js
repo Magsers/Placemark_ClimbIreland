@@ -36,9 +36,10 @@ export const routeMemStore = {
   },
 
   async updateRoute(route, updatedRoute) {
-    route.title = updatedRoute.title;
+    route.name = updatedRoute.name;
     route.grade = updatedRoute.grade;
     route.height = updatedRoute.height;
     route.firstascent = updatedRoute.firstascent;
+    route.description = updatedRoute.description;
   },
 };

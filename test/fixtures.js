@@ -26,22 +26,27 @@ export const maggie = {
     },
   ];
 
+  export const maggieCredentials = {
+    email: "maggie@simpson.com",
+    password: "secret"
+  };
+
   export const burren = {
     title: "The Burren",
     lat: 20.00,
     lng: 20.00,
-    approach: "by abseil"
+    approach: "Abseil"
   };
 
   export const fairhead = {
     title: "Fairhead",
     lat: 10.00,
     lng: 10.00,
-    approach: "path"
+    approach: "Path"
   };
 
   export const jugcity = {
-    route: "Jug City",
+    name: "Jug City",
     grade: "VS",
     height: 15,
     firstascent: "Ricky Bell",
@@ -71,25 +76,25 @@ export const maggie = {
 
   export const testRoutes = [
     {
-      route: "Lisdoonfarout",
-      grade: "HS",
-      height: 10,
-      firstascent: "Dave Ayton",
-      description: "easy"
+      "name": "Lisdoonfarout",
+      "grade": "HS",
+      "height": 10,
+      "firstascent": "Dave Ayton",
+      "description": "easy"
     },
     {
-      route: "Moonrill",
-      grade: "HVS",
-      height: 25,
-      firstascent: "Richard Doody",
-      description: "chimney climb, very exposed"
+      "name": "Moonrill",
+      "grade": "HVS",
+      "height": 25,
+      "firstascent": "Richard Doody",
+      "description": "chimney climb, very exposed"
     },
     {
-      route: "An Bonain Bui",
-      grade: "VS",
-      height: 20,
-      firstascent: "Vicky Cleary",
-      description: "polished"
+      "name": "An Bonain Bui",
+      "grade": "VS",
+      "height": 20,
+      "firstascent": "Vicky Cleary",
+      "description": "polished"
     }
   ];
 

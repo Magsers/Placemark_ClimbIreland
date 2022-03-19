@@ -1,16 +1,11 @@
 {
   "crags": [
     {
-      "title": "Dunsheen Head",
-      "_id": "9c87f23c-27a0-4cab-a6ca-7cab245776dc"
-    },
-    {
-      "title": "Gap of Dunloe",
-      "_id": "1fa0bd65-922a-4ff1-9919-606c19d005ab"
-    },
-    {
-      "title": "Glendalough",
-      "_id": "5fa834fd-26f5-4b35-a60b-ccc926fc7cdf"
+      "title": "The Burren",
+      "lat": 20,
+      "lng": 20,
+      "approach": "Abseil",
+      "_id": "663e4cb6-56ca-4955-9908-47c39707dee7"
     }
   ]
 }

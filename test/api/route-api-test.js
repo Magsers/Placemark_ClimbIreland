@@ -1,4 +1,5 @@
 import { assert } from "chai";
+import { db } from "../../src/models/db.js";
 import { assertSubset } from "../test-utils.js";
 import { placemarkService } from "./placemark-service.js";
 import { maggie, burren, testCrags, testRoutes, jugcity } from "../fixtures.js";
@@ -8,17 +9,18 @@ suite("Route API tests", () => {
   let ballyryan = null;
 
   setup(async () => {
-    // placemarkService.clearAuth();
-    // user = await placemarkService.createUser(maggie);
-    // await placemarkService.authenticate(maggie);
-     await placemarkService.deleteAllCrags();
-     await placemarkService.deleteAllUsers();
-     await placemarkService.deleteAllRoutes();
-     user = await placemarkService.createUser(maggie);
-    // await placemarkService.authenticate(maggie);
-     burren.userid = user._id;
-     ballyryan = await placemarkService.createCrag(burren);
+    placemarkService.clearAuth();
+    user = await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggie);
+    await placemarkService.deleteAllCrags();
+    await placemarkService.deleteAllRoutes();
+    await placemarkService.deleteAllUsers();
+    user = await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggie);
+    burren.userid = user._id;
+    ballyryan = await placemarkService.createCrag(burren);
   });
+  
   teardown(async () => {});
 
   test("create route", async () => {

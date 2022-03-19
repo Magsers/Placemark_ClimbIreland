@@ -1,6 +1,7 @@
 import { assert } from "chai";
 import { placemarkService } from "./placemark-service.js";
 import { assertSubset } from "../test-utils.js";
+import { db } from "../../src/models/db.js";
 
 import { maggie, fairhead, testCrags } from "../fixtures.js";
 
@@ -9,9 +10,13 @@ suite("Crag API tests", () => {
   let user = null;
 
   setup(async () => {
+    placemarkService.clearAuth();
+    user = await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggie);
     await placemarkService.deleteAllCrags();
     await placemarkService.deleteAllUsers();
     user = await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggie);
     fairhead.userid = user._id;
   });
 

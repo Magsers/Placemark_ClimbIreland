@@ -2,10 +2,13 @@ import Boom from "@hapi/boom";
 import { IdSpec, CragArraySpec, CragSpec, CragSpecPlus } from "../models/db/joi-schemas.js";
 import { db } from "../models/db.js";
 import { validationError } from "../logger.js";
+import { createToken } from "./jwt-utils.js";
 
 export const cragApi = {
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const crags = await db.cragStore.getAllCrags();
@@ -21,7 +24,9 @@ export const cragApi = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     async handler(request, h) {
       try {
         const crag = await db.cragStore.getCragById(request.params.id);
@@ -41,7 +46,9 @@ export const cragApi = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const crag = request.payload;
@@ -62,7 +69,9 @@ export const cragApi = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const crag = await db.cragStore.getCragById(request.params.id);
@@ -81,10 +90,12 @@ export const cragApi = {
 },
 
 deleteAll: {
-  auth: false,
+  auth: {
+    strategy: "jwt",
+  },
   handler: async function (request, h) {
     try {
-      await db.placemarkStore.deleteAllCrags();
+      await db.cragStore.deleteAllCrags();
       return h.response().code(204);
     } catch (err) {
       return Boom.serverUnavailable("Database Error");

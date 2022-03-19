@@ -24,7 +24,7 @@ export const cragController = {
     handler: async function (request, h) {
       const crag = await db.cragStore.getCragById(request.params.id);
       const newRoute = {
-        route: request.payload.route,
+        name: request.payload.name,
         grade: request.payload.grade,
         height: Number(request.payload.height),
         firstascent: request.payload.firstascent,

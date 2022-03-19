@@ -40,7 +40,7 @@ export const routeMongoStore = {
   },
 
   async updateRoute(route, updatedRoute) {
-    route.route = updatedRoute.route;
+    route.name = updatedRoute.name;
     route.grade = updatedRoute.grade;
     route.height = updatedRoute.height;
     route.firstascent = updatedRoute.firstascent;

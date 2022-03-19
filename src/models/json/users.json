@@ -1,3 +1,32 @@
 {
-  "users": []
+  "users": [
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "515e27fd-f702-4e13-8f6d-6e528d06f813"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "b3ff3bb4-01cd-4b1b-8913-7b6c2a8ca891"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "7e5abc90-d8a0-4e4f-8117-e8154f2e3ca9"
+    },
+    {
+      "firstName": "Margaret",
+      "lastName": "McCarthy",
+      "email": "mags@mccarthy.ie",
+      "password": "hello",
+      "_id": "216faa10-79a8-4350-9c6e-0753b69c1f53"
+    }
+  ]
 }

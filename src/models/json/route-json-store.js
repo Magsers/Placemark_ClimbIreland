@@ -43,9 +43,11 @@ export const routeJsonStore = {
   },
 
   async updateRoute(route, updatedRoute) {
-    route.title = updatedRoute.title;
-    route.artist = updatedRoute.artist;
-    route.duration = updatedRoute.duration;
+    route.name = updatedRoute.name;
+    route.grade = updatedRoute.grade;
+    route.height = updatedRoute.height;
+    route.firstascent = updatedRoute.firstascent;
+    route.description = updatedRoute.description;
     await db.write();
   },
 };

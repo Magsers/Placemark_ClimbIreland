@@ -23,7 +23,7 @@ export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).descrip
   
   export const RouteSpec = Joi.object()
   .keys({
-    route: Joi.string().required().example("Animal"),
+    name: Joi.string().required().example("Animal"),
     grade: Joi.string().required().example("E1"),
     height: Joi.number().allow("").optional().example(25),
     firstascent: Joi.string().allow("").optional().example("Ricky Bell"),
@@ -42,9 +42,9 @@ export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).descrip
   export const CragSpec = Joi.object()
   .keys({
     title: Joi.string().required().example("Murlough Bay"),
-    // lat: Joi.number().allow("").optional().example("20.00"),
-    // lng: Joi.number().allow("").optional().example("20.00"),
-    // approach: Joi.string().allow("").optional().example("Walk SW from carpark"),
+    lat: Joi.number().allow("").optional().example("20.00"),
+    lng: Joi.number().allow("").optional().example("20.00"),
+    approach: Joi.string().allow("").optional().example("Walk SW from carpark"),
     userid: IdSpec,
     routes: RouteArraySpec,
   })
@@ -56,3 +56,10 @@ export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).descrip
   }).label("CragPlus");
   
   export const CragArraySpec = Joi.array().items(CragSpecPlus).label("CragArray");
+
+  export const JwtAuth = Joi.object()
+  .keys({
+    success: Joi.boolean().example("true").required(),
+    token: Joi.string().example("eyJhbGciOiJND.g5YmJisIjoiaGYwNTNjAOhE.gCWGmY5-YigQw0DCBo").required(),
+  })
+  .label("JwtAuth");

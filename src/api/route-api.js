@@ -2,10 +2,13 @@ import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
 import { IdSpec, RouteSpec, RouteSpecPlus, RouteArraySpec } from "../models/db/joi-schemas.js";
 import { validationError } from "../logger.js";
+import { createToken } from "./jwt-utils.js";
 
 export const routeApi = {
     find: {
-      auth: false,
+      auth: {
+        strategy: "jwt",
+      },
       handler: async function (request, h) {
        try {
         const routes = await db.routeStore.getAllRoutes();
@@ -21,7 +24,9 @@ export const routeApi = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     async handler(request) {
       try {
         const route = await db.routeStore.getRouteById(request.params.id);
@@ -41,7 +46,9 @@ export const routeApi = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const route = await db.routeStore.addRoute(request.params.id, request.payload);
@@ -61,7 +68,9 @@ export const routeApi = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         await db.routeStore.deleteAllRoutes();
@@ -75,7 +84,9 @@ export const routeApi = {
   },
 
    deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const route = await db.routeStore.getRouteById(request.params.id);

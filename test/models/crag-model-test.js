@@ -6,11 +6,11 @@ import { assertSubset } from "../test-utils.js";
 suite("Crag Model tests", () => {
 
   setup(async () => {
-    db.init("mongo");
+    db.init("json");
     await db.cragStore.deleteAllCrags();
     for (let i = 0; i < testCrags.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
-      testCrags[i] = await db.cragStore.addCrag(testCrags[i]);
+      testCrags[0] = await db.cragStore.addCrag(testCrags[i]);
     }
   });
 
