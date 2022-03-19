@@ -54,9 +54,13 @@ export const accountsController = {
       if (!user || user.password !== password) {
         return h.redirect("/");
       }
+      if (user.email === "admin@placemark.ie" && user.password === "hello") {
+        request.cookieAuth.set({ id: user._id });
+        return h.redirect("/admin");
+      }
       request.cookieAuth.set({ id: user._id });
       return h.redirect("/dashboard");
-    },
+   }
   },
 
   logout: {

@@ -1,9 +1,29 @@
 {{> menu}}
 
 <section class="section">
+  <div class="columns">
+    <div class="column">
   <div class="title">
     {{crag.title}}
+  </div>
+  <span class="is-inline">
+    <div> Latitude : {{crag.lat}}</div>
+    <div> Longitude : {{crag.lng}}</div>
+    <div> Approach : {{crag.approach}}</div>
+  </span>
+  </div>
+<div class="column">
+<p style="text-align:center;"><img src="/images/ailladie.jpg" width="300" height="200"></p>
+  </div>
   </div>
   {{> list-routes}}
   {{> add-route}}
 </section> 
+
+<script>
+function cragImage(){
+    if(crag.title=="The Burren"){
+    	cragimage = "/images/ailladie.jpg";
+    }
+}
+</script>
