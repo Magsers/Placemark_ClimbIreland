@@ -1,0 +1,19 @@
+<form name="addnewcrag" class="box" action="/dashboard/addnewcrag" method="POST">
+  <div class="field is-horizontal">
+    <div class="field-body">
+    <div class="field">
+    <label class="label">Crag Name</label><input class="input" type="text"type="text" placeholder="Enter Crag Name" name="title">
+    </div>
+    <div class="field">
+    <label class="label">Latitude</label> <input class="input" type="number" placeholder="00.00" step=".01" min="-90" max="90" id="latitude" name="lat">
+  </div>
+   <div class="field">
+     <label class="label">Longitude</label> <input class="input" type="number" placeholder="00.00" step=".01" min="-180" max="180" id="longitude" name="lng">
+    </div>
+    <div class="field">
+     <label class="label">Approach</label> <input class="input" type="text" placeholder="Enter approach description" name="approach">
+    </div>
+    </div>
+    </div>
+  <button class="button is-link">Add New Crag</button>
+</form>

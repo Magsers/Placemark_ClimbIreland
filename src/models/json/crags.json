@@ -6,6 +6,22 @@
       "lng": 20,
       "approach": "Abseil",
       "_id": "663e4cb6-56ca-4955-9908-47c39707dee7"
+    },
+    {
+      "userid": "216faa10-79a8-4350-9c6e-0753b69c1f53",
+      "title": "The Burren",
+      "lat": 20,
+      "lng": 20,
+      "approach": "Path",
+      "_id": "94e31863-6ecb-42bb-9815-32acf0cb93c0"
+    },
+    {
+      "userid": "216faa10-79a8-4350-9c6e-0753b69c1f53",
+      "title": "The Mournes",
+      "lat": 50,
+      "lng": 50,
+      "approach": "Parked at Lat/Lng points",
+      "_id": "9be85df8-e8f3-4521-ad00-522aeabf6864"
     }
   ]
 }

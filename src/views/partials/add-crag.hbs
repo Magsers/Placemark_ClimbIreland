@@ -2,13 +2,24 @@
   <div class="field is-horizontal">
     <div class="field-body">
     <div class="field">
-    <label class="label">Crag Name</label> <input class="input" type="text" placeholder="Enter crag name" name="title">
+    <label class="label">Crag Name</label>
+    <select id="crags" onChange="return updateLatLong()" type="text" placeholder="Select Crag" name="title">
+        <option value="Please select">Please select...</option>
+        <option value="Gap of Dunloe">Gap of Dunloe</option>
+        <option value="The Burren">The Burren</option>
+        <option value="Fairhead">Fairhead</option>
+        <option value="Glendalough">Glendalough</option>
+        <option value="The Mournes">The Mournes</option>
+        <option value="Donegal">Donegal</option>
+        <option value="Dalkey">Dalkey Quarry</option>
+        <option value="Ballykeefe">Ballykeefe Quarry</option>
+      </select>
   </div>
     <div class="field">
-    <label class="label">Latitude</label> <input class="input" type="number" placeholder="00.00" step=".01" min="-90" max="90" name="lat">
+    <label class="label">Latitude</label> <input class="input" type="number" placeholder="00.00" step=".01" min="-90" max="90" id="latitude" name="lat">
   </div>
    <div class="field">
-     <label class="label">Longitude</label> <input class="input" type="number" placeholder="00.00" step=".01" min="-180" max="180" name="lng">
+     <label class="label">Longitude</label> <input class="input" type="number" placeholder="00.00" step=".01" min="-180" max="180" id="longitude" name="lng">
     </div>
     <div class="field">
      <label class="label">Approach</label> <input class="input" type="text" placeholder="Enter approach description" name="approach">
@@ -30,4 +41,50 @@
             return false;
         }
     }
+</script>
+
+<!-- https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js-->
+<script>
+function updateLatLong(){
+    var ddl = document.getElementById("crags");
+    var selectedOption = ddl.options[ddl.selectedIndex];
+    var liveMemberData = selectedOption.getAttribute("value");
+    var latitude = document.getElementById("latitude");
+    var longitude = document.getElementById("longitude");
+    if(liveMemberData=="Gap of Dunloe"){
+    	latitude.value = "10";
+    }
+    else if(liveMemberData=="The Burren"){
+    	latitude.value = "20";
+      longitude.value = "20";
+    }   
+     else if(liveMemberData=="Fairhead"){
+    	latitude.value = "30";
+      longitude.value = "30";
+    }   
+     else if(liveMemberData=="Glendalough"){
+    	latitude.value = "40";
+      longitude.value = "40";
+    }   
+     else if(liveMemberData=="The Mournes"){
+    	latitude.value = "50";
+      longitude.value = "50";
+    }   
+     else if(liveMemberData=="Donegal"){
+    	latitude.value = "60";
+      longitude.value = "60";
+    }   
+     else if(liveMemberData=="The Burren"){
+    	latitude.value = "70";
+      longitude.value = "70";
+    }   
+     else if(liveMemberData=="Dalkey"){
+    	latitude.value = "80";
+      longitude.value = "80";
+    }   
+     else if(liveMemberData=="Ballykeefe"){
+    	latitude.value = "90";
+      longitude.value = "90";
+    }   
+}
 </script>
