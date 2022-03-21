@@ -89,7 +89,7 @@ async function init() {
 
   server.validator(Joi);
 
-  db.init("json");
+  db.init("mongo");
   server.route(webRoutes);
   server.route(apiRoutes);
   await server.start();

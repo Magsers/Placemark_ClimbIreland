@@ -45,4 +45,22 @@ export const cragController = {
     return h.redirect(`/crag/${ crag._id}`);
     },
   },
+
+  editRoute: {
+    handler: async function (request, h) {
+    const crag = await db.cragStore.getCragById(request.params.id);
+    const route = await db.routeStore.getRouteById(request.params.routeid);
+    const updatedRoute = {
+      name: request.payload.name,
+      grade: request.payload.grade,
+      height: Number(request.payload.height),
+      firstascent: request.payload.firstascent,
+      description: request.payload.description,
+      timestamp: timestamp,
+    };
+    await db.routeStore.updateRoute(route._id, updatedRoute);
+    return h.redirect(`/crag/${crag._id}`);
+    },
+  },
+
 };

@@ -1,32 +1,25 @@
 {
   "users": [
     {
-      "firstName": "Bart",
+      "firstName": "Homer",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "9f7824f2-265d-4cc7-a332-a267c0d8a915"
+      "_id": "ec17fc63-63e2-4074-b118-2006272584a7"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "126d9501-dac0-401e-983a-4ead49114f3d"
+      "_id": "c98315f5-19c0-4170-bb49-99b7dc94f9f5"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "1f18f157-908b-4fd0-a7de-5c8119b03348"
-    },
-    {
-      "firstName": "Placemark",
-      "lastName": "Admin",
-      "email": "admin@placemark.ie",
-      "password": "hello",
-      "_id": "1f18f157-2255-4fd0-a7de-5c8119b03348"
+      "_id": "d55a995b-a657-47f2-a297-fddd76756175"
     }
   ]
 }

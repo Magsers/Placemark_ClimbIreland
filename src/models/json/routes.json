@@ -6,8 +6,8 @@
       "height": 10,
       "firstascent": "Dave Ayton",
       "description": "easy",
-      "_id": "dd692ee3-cf26-4c0c-89c9-54b9cd062034",
-      "cragid": "a7d9b54d-67d8-4840-98cb-6fa64fce4a42"
+      "_id": "e4270ba1-9318-4f17-bb72-5b58ab17589a",
+      "cragid": "909b7464-6479-4781-9c5f-16f1522cb1f0"
     },
     {
       "name": "Moonrill",
@@ -15,38 +15,8 @@
       "height": 25,
       "firstascent": "Richard Doody",
       "description": "chimney climb, very exposed",
-      "_id": "c01c5cab-88d4-4176-a713-68275e8cd20d",
-      "cragid": "a7d9b54d-67d8-4840-98cb-6fa64fce4a42"
-    },
-    {
-      "name": "Animal",
-      "grade": "Diff",
-      "height": 20,
-      "firstascent": "RB",
-      "description": "skdhfj",
-      "timestamp": 1647773052,
-      "_id": "8b1b478d-ff70-4dc2-8289-0968da014281",
-      "cragid": "ab0cfedf-ea50-4674-beeb-5e35fe66ce45"
-    },
-    {
-      "name": "dsfsd",
-      "grade": "Diff",
-      "height": 0,
-      "firstascent": "",
-      "description": "",
-      "timestamp": "20/03/2022",
-      "_id": "4b7952ed-06a2-4426-aa1c-fd7181a66f69",
-      "cragid": "ab0cfedf-ea50-4674-beeb-5e35fe66ce45"
-    },
-    {
-      "name": "Paradise Lost",
-      "grade": "Diff",
-      "height": 25,
-      "firstascent": "Michael Duffy",
-      "description": "Easy",
-      "timestamp": "20/03/2022",
-      "_id": "00e59d9f-87f0-4769-8a81-4cd855b675c8",
-      "cragid": "90ab80ad-d588-40e3-9aab-5996830d3668"
+      "_id": "b2e6bd0e-ccf1-4246-ad2f-70d210705d62",
+      "cragid": "909b7464-6479-4781-9c5f-16f1522cb1f0"
     }
   ]
 }
