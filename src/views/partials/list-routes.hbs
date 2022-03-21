@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     {{#each crag.routes}}
-      <tr>
+      <tr id="route">
         <td>
           {{name}}
         </td>
@@ -30,6 +30,7 @@
          <td>
           {{timestamp}}
         </td>
+        <td>
         <td><a href="/crag/{{../crag._id}}/editroute/{{_id}}" class="ui icon button">
            <i class="fas fa-edit"></i>
             </a>
