@@ -22,6 +22,8 @@ export const cragController = {
       },
     },
     handler: async function (request, h) {
+      const date = new Date();
+      const timestamp = date.toLocaleDateString();
       const crag = await db.cragStore.getCragById(request.params.id);
       const newRoute = {
         name: request.payload.name,
@@ -29,6 +31,7 @@ export const cragController = {
         height: Number(request.payload.height),
         firstascent: request.payload.firstascent,
         description: request.payload.description,
+        timestamp: timestamp,
       };
       await db.routeStore.addRoute(crag._id, newRoute);
       return h.redirect(`/crag/${crag._id}`);

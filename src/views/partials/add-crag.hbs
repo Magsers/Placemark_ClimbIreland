@@ -4,13 +4,13 @@
     <div class="field">
     <label class="label">Crag Name</label>
     <select id="crags" onChange="return updateLatLong()" type="text" placeholder="Select Crag" name="title">
-        <option value="Please select">Please select...</option>
-        <option value="Gap of Dunloe">Gap of Dunloe</option>
-        <option value="The Burren">The Burren</option>
+        <option value="Please select" disabled>Please select...</option>
+        <option value="TheGap">Gap of Dunloe</option>
+        <option value="Burren">The Burren</option>
         <option value="Fairhead">Fairhead</option>
         <option value="Glendalough">Glendalough</option>
-        <option value="The Mournes">The Mournes</option>
-        <option value="Donegal">Donegal</option>
+        <option value="Mournes">The Mournes</option>
+        <option value="Murlough">Murlough Bay</option>
         <option value="Dalkey">Dalkey Quarry</option>
         <option value="Ballykeefe">Ballykeefe Quarry</option>
       </select>
@@ -43,49 +43,45 @@
     }
 </script>
 
-<!-- https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js-->
+<!-- https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js -->
 <script>
 function updateLatLong(){
     var ddl = document.getElementById("crags");
     var selectedOption = ddl.options[ddl.selectedIndex];
-    var liveMemberData = selectedOption.getAttribute("value");
+    var crag = selectedOption.getAttribute("value");
     var latitude = document.getElementById("latitude");
     var longitude = document.getElementById("longitude");
-    if(liveMemberData=="Gap of Dunloe"){
-    	latitude.value = "10";
-      longitude.value = "10";
+    if(crag=="TheGap"){
+    	latitude.value = "52.03";
+      longitude.value = "-9.63";
     }
-    else if(liveMemberData=="The Burren"){
-    	latitude.value = "20";
-      longitude.value = "20";
+    else if(crag=="Burren"){
+    	latitude.value = "53.05";
+      longitude.value = "-9.35";
     }   
-     else if(liveMemberData=="Fairhead"){
-    	latitude.value = "30";
-      longitude.value = "30";
+     else if(crag=="Fairhead"){
+    	latitude.value = "55.21";
+      longitude.value = "-6.15";
     }   
-     else if(liveMemberData=="Glendalough"){
-    	latitude.value = "40";
-      longitude.value = "40";
+     else if(crag=="Glendalough"){
+    	latitude.value = "53.01";
+      longitude.value = "-6.34";
     }   
-     else if(liveMemberData=="The Mournes"){
-    	latitude.value = "50";
-      longitude.value = "50";
+     else if(crag=="Mournes"){
+    	latitude.value = "54.15";
+      longitude.value = "-6.06";
     }   
-     else if(liveMemberData=="Donegal"){
-    	latitude.value = "60";
-      longitude.value = "60";
+     else if(crag=="Murlough"){
+    	latitude.value = "55.21";
+      longitude.value = "-6.11";
     }   
-     else if(liveMemberData=="The Burren"){
-    	latitude.value = "70";
-      longitude.value = "70";
+     else if(crag=="Dalkey"){
+    	latitude.value = "53.27";
+      longitude.value = "-6.10";
     }   
-     else if(liveMemberData=="Dalkey"){
-    	latitude.value = "80";
-      longitude.value = "80";
-    }   
-     else if(liveMemberData=="Ballykeefe"){
-    	latitude.value = "90";
-      longitude.value = "90";
+     else if(crag=="Ballykeefe"){
+    	latitude.value = "52.60";
+      longitude.value = "-7.40";
     }   
 }
 </script>

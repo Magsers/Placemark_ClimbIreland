@@ -10,6 +10,7 @@ export const dashboardController = {
         title: "Placemark Dashboard",
         user: loggedInUser,
         crags: crags,
+        cragCount: crags.length,
       };
       return h.view("dashboard-view", viewData);
     },

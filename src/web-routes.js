@@ -19,6 +19,7 @@ export const webRoutes = [
   { method: "GET", path: "/about", config: aboutController.index },
 
   { method: "GET", path: "/admin", config: adminController.index },
+  { method: "GET", path: "/admin/{id}", config: adminController.userProfile },
   { method: "GET", path: "/admin/deleteUser/{id}", config: adminController.deleteUser },
 
   { method: "GET", path: "/crag/{id}", config: cragController.index },
