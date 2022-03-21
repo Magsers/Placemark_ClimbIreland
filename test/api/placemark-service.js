@@ -63,8 +63,8 @@ export const placemarkService = {
     return res.data;
   },
 
-  async createRoute(id, track) {
-    const res = await axios.post(`${this.placemarkUrl}/api/playlists/${id}/routes`, track);
+  async createRoute(id, route) {
+    const res = await axios.post(`${this.placemarkUrl}/api/crags/${id}/routes`, route);
     return res.data;
   },
 
