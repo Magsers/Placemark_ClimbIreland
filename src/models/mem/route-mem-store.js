@@ -19,7 +19,12 @@ export const routeMemStore = {
   },
 
   async getRouteById(id) {
-    return routes.find((route) => route._id === id);
+    const list = routes.find((route) => route._id === id);
+    if (list) {
+      list.routes = await routeMemStore.getRoutesByCragId(list._id);
+      return list;
+    }
+    return null;
   },
 
   async getCragRoutes(cragId) {
@@ -28,8 +33,8 @@ export const routeMemStore = {
 
   async deleteRoute(id) {
     const index = routes.findIndex((route) => route._id === id);
-    routes.splice(index, 1);
-  },
+    if (index !== -1) routes.splice(index, 1);
+  },    
 
   async deleteAllRoutes() {
     routes = [];

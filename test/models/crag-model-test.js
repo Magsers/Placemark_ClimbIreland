@@ -6,7 +6,7 @@ import { assertSubset } from "../test-utils.js";
 suite("Crag Model tests", () => {
 
   setup(async () => {
-    db.init("json");
+    db.init("");
     await db.cragStore.deleteAllCrags();
     for (let i = 0; i < testCrags.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop

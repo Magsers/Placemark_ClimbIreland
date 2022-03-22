@@ -27,7 +27,9 @@ export const routeJsonStore = {
 
   async getRouteById(id) {
     await db.read();
-    return db.data.routes.find((route) => route._id === id);
+    let u = db.data.routes.find((route) => route._id === id);
+    if (u === undefined) u = null;
+    return u;
   },
 
   async deleteRoute(id) {

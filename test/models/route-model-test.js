@@ -54,12 +54,12 @@ suite("Route Model tests", () => {
     assert.isNull(deletedRoute);
   });
 
-  test("get a crag - bad params", async () => {
+  test("get a route - bad params", async () => {
     assert.isNull(await db.routeStore.getRouteById(""));
     assert.isNull(await db.routeStore.getRouteById());
   });
 
-  test("delete One User - fail", async () => {
+  test("delete One Route - fail", async () => {
     await db.routeStore.deleteRoute("bad-id");
     const routes = await db.routeStore.getAllRoutes();
     assert.equal(routes.length, testRoutes.length);

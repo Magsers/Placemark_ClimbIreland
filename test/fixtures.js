@@ -56,20 +56,20 @@ export const maggie = {
   export const testCrags = [
     {
       title: "Dunsheen Head",
-      lat: 20.00,
-      lng: 20.00,
+      lat: 10.00,
+      lng: -6.00,
       approach: "by abseil"
     },
     {
       title: "Gap of Dunloe",
       lat: 20.00,
-      lng: 20.00,
-      approach: "by abseil"
+      lng: -5.00,
+      approach: "path from car park"
     },
     {
       title: "Glendalough",
-      lat: 20.00,
-      lng: 20.00,
+      lat: 55.00,
+      lng: -16.00,
       approach: "by abseil"
     }
   ];
