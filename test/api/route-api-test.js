@@ -2,7 +2,7 @@ import { assert } from "chai";
 import { db } from "../../src/models/db.js";
 import { assertSubset } from "../test-utils.js";
 import { placemarkService } from "./placemark-service.js";
-import { maggie, burren, testCrags, testRoutes, jugcity } from "../fixtures.js";
+import { maggie, maggieCredentials, burren, testCrags, testRoutes, jugcity } from "../fixtures.js";
 
 suite("Route API tests", () => {
   let user = null;
@@ -11,12 +11,12 @@ suite("Route API tests", () => {
   setup(async () => {
     placemarkService.clearAuth();
     user = await placemarkService.createUser(maggie);
-    await placemarkService.authenticate(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     await placemarkService.deleteAllCrags();
     await placemarkService.deleteAllRoutes();
     await placemarkService.deleteAllUsers();
     user = await placemarkService.createUser(maggie);
-    await placemarkService.authenticate(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     burren.userid = user._id;
     ballyryan = await placemarkService.createCrag(burren);
   });

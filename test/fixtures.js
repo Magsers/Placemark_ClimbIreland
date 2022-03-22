@@ -76,25 +76,25 @@ export const maggie = {
 
   export const testRoutes = [
     {
-      "name": "Lisdoonfarout",
-      "grade": "HS",
-      "height": 10,
-      "firstascent": "Dave Ayton",
-      "description": "easy"
+      name: "Lisdoonfarout",
+      grade: "HS",
+      height: 10,
+      firstascent: "Dave Ayton",
+      description: "easy"
     },
     {
-      "name": "Moonrill",
-      "grade": "HVS",
-      "height": 25,
-      "firstascent": "Richard Doody",
-      "description": "chimney climb, very exposed"
+      name: "Moonrill",
+      grade: "HVS",
+      height: 25,
+      firstascent: "Richard Doody",
+      description: "chimney climb, very exposed"
     },
     {
-      "name": "An Bonain Bui",
-      "grade": "VS",
-      "height": 20,
-      "firstascent": "Vicky Cleary",
-      "description": "polished"
+      name: "An Bonain Bui",
+      grade: "VS",
+      height: 20,
+      firstascent: "Vicky Cleary",
+      description: "polished"
     }
   ];
 

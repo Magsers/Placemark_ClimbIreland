@@ -3,7 +3,7 @@ import { placemarkService } from "./placemark-service.js";
 import { assertSubset } from "../test-utils.js";
 import { db } from "../../src/models/db.js";
 
-import { maggie, fairhead, testCrags } from "../fixtures.js";
+import { maggie, maggieCredentials, fairhead, testCrags } from "../fixtures.js";
 
 suite("Crag API tests", () => {
 
@@ -12,11 +12,11 @@ suite("Crag API tests", () => {
   setup(async () => {
     placemarkService.clearAuth();
     user = await placemarkService.createUser(maggie);
-    await placemarkService.authenticate(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     await placemarkService.deleteAllCrags();
     await placemarkService.deleteAllUsers();
     user = await placemarkService.createUser(maggie);
-    await placemarkService.authenticate(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     fairhead.userid = user._id;
   });
 

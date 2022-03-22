@@ -19,4 +19,5 @@ export const apiRoutes = [
   { method: "POST", path: "/api/crags/{id}/routes", config: routeApi.create },
   { method: "DELETE", path: "/api/routes", config: routeApi.deleteAll },
   { method: "DELETE", path: "/api/routes/{id}", config: routeApi.deleteOne },
+  { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
 ];

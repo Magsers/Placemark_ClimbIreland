@@ -29,8 +29,8 @@ suite("User API tests", () => {
     let returnedUsers = await placemarkService.getAllUsers();
     assert.equal(returnedUsers.length, 4);
     await placemarkService.deleteAllUsers();
-    await playtimeService.createUser(maggie);
-    await playtimeService.authenticate(maggieCredentials);
+    await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     returnedUsers = await placemarkService.getAllUsers();
     assert.equal(returnedUsers.length, 1);
   });
