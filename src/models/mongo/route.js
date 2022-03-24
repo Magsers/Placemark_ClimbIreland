@@ -8,6 +8,7 @@ const routeSchema = new Schema({
   height: Number,
   firstascent: String,
   description: String,
+  datedone: String,
   cragid: {
     type: Schema.Types.ObjectId,
     ref: "Crag",

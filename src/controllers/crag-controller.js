@@ -1,5 +1,6 @@
 import { db } from "../models/db.js";
 import { RouteSpec } from "../models/db/joi-schemas.js";
+import { imageStore } from "../models/image-store.js";
 
 export const cragController = {
   index: {
@@ -31,7 +32,7 @@ export const cragController = {
         height: Number(request.payload.height),
         firstascent: request.payload.firstascent,
         description: request.payload.description,
-        timestamp: timestamp,
+        datedone: timestamp,
       };
       await db.routeStore.addRoute(crag._id, newRoute);
       return h.redirect(`/crag/${crag._id}`);
@@ -56,11 +57,35 @@ export const cragController = {
       height: Number(request.payload.height),
       firstascent: request.payload.firstascent,
       description: request.payload.description,
-      timestamp: timestamp,
+      datedone: request.payload.datedone,
     };
     await db.routeStore.updateRoute(route._id, updatedRoute);
     return h.redirect(`/crag/${crag._id}`);
     },
   },
+
+  uploadImage: {
+    handler: async function(request, h) {
+      try {
+        const crag = await db.cragStore.getCragById(request.params.id);
+        const file = request.payload.imagefile;
+        if (Object.keys(file).length > 0) {
+          const url = await imageStore.uploadImage(request.payload.imagefile);
+          crag.img = url;
+          db.cragStore.updateCrag(crag);
+        }
+        return h.redirect(`/crag/${crag._id}`);
+      } catch (err) {
+        console.log(err);
+        return h.redirect(`/crag/${crag._id}`);
+      }
+    },
+    payload: {
+      multipart: true,
+      output: "data",
+      maxBytes: 209715200,
+      parse: true
+    }
+  }
 
 };

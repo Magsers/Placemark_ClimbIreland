@@ -7,6 +7,7 @@ const cragSchema = new Schema({
   lat: Number,
   lng: Number,
   approach: String,
+  img: String,
   userid: {
     type: Schema.Types.ObjectId,
     ref: "User",

@@ -39,5 +39,16 @@ export const cragMongoStore = {
 
   async deleteAllCrags() {
     await Crag.deleteMany({});
-  }
+  },
+
+  async updateCrag(updatedCrag) {
+    const crag = await Crag.findOne({ _id: updatedCrag._id });
+    crag.title = updatedCrag.title;
+    crag.lat = updatedCrag.lat;
+    crag.lng = updatedCrag.lng;
+    crag.approach = updatedCrag.approach;
+    crag.img = updatedCrag.img;
+    await crag.save();
+  },
+
 };

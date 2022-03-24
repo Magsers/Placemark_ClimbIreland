@@ -29,4 +29,5 @@ export const webRoutes = [
   { method: "GET", path: "/crag/{id}/editroute/{routeid}", config: cragController.editRoute },
 
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
+  { method: "POST", path: "/crag/{id}/uploadimage", config: cragController.uploadImage },
 ]; 

@@ -1,8 +1,8 @@
 {{> menu}}
 
-<section class="section" >
-  <div class="columns">
-    <div class="column">
+<section class="section columns is-vcentered" >
+  
+    <div class="column has-text-left">
       <div id="cragtitle" class="title">
         {{crag.title}}
       </div>
@@ -11,14 +11,17 @@
     <div> Longitude : {{crag.lng}}</div>
     <div> Approach : {{crag.approach}}</div>
   </span>
-  </div>
-<div class="column">
-<p style="text-align:center;"><img alt="crag image" id="cragimg" width="300" height="200"/></p>
-  </div>
-  </div>
-  {{> list-routes}}
+    {{> list-routes}}
   {{> add-route}}
-</section> 
+
+  </div>
+
+<div class="column">
+  {{> crag-image }}
+{{!-- <p style="text-align:center;"><img alt="crag image" id="cragimg" width="300" height="200"/></p> --}}
+  </div>
+</section>   
+
 
 <script>
   function cragImage(id) {

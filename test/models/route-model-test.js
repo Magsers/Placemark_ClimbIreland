@@ -8,7 +8,7 @@ suite("Route Model tests", () => {
   let burrenList = null;
 
   setup(async () => {
-    db.init("json");
+    db.init("");
     await db.cragStore.deleteAllCrags();
     await db.routeStore.deleteAllRoutes();
     burrenList = await db.cragStore.addCrag(burren);
