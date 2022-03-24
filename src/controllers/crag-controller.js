@@ -47,7 +47,21 @@ export const cragController = {
     },
   },
 
-  editRoute: {
+  showEditRoute: {
+    handler: async function (request, h) {
+    const loggedInUser = request.auth.credentials;
+    const crag = await db.cragStore.getCragById(request.params.id);
+    const route = await db.routeStore.getRouteById(request.params.routeid);
+        const viewData = {
+          title: "Edit Route",
+          crag: crag,
+          route: route,
+        };
+        return h.view("edit-route", viewData);
+      },
+    },
+  
+  updateRoute: {
     handler: async function (request, h) {
     const crag = await db.cragStore.getCragById(request.params.id);
     const route = await db.routeStore.getRouteById(request.params.routeid);

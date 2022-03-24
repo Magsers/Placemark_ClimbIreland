@@ -46,5 +46,6 @@ export const routeMemStore = {
     route.height = updatedRoute.height;
     route.firstascent = updatedRoute.firstascent;
     route.description = updatedRoute.description;
+    route.datedone = updatedRoute.datedone;
   },
 };

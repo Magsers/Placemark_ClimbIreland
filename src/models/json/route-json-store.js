@@ -50,7 +50,7 @@ export const routeJsonStore = {
     route.height = updatedRoute.height;
     route.firstascent = updatedRoute.firstascent;
     route.description = updatedRoute.description;
-    route.timestamp = timestamp;
+    route.datedone = datedone;
     await db.write();
   },
 };

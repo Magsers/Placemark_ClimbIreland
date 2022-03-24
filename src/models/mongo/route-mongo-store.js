@@ -45,6 +45,7 @@ export const routeMongoStore = {
     route.height = updatedRoute.height;
     route.firstascent = updatedRoute.firstascent;
     route.description = updatedRoute.description;
+    route.datedone = updatedRoute.datedone;
     await route.save();
   },
 };

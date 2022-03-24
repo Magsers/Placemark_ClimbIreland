@@ -47,4 +47,15 @@ export const cragJsonStore = {
     db.data.crags = [];
     await db.write();
   },
+
+  async updateCrag(updatedCrag) {
+    await db.read();
+    const crag = await Crag.findOne({ _id: updatedCrag._id });
+    crag.title = updatedCrag.title;
+    crag.lat = updatedCrag.lat;
+    crag.lng = updatedCrag.lng;
+    crag.approach = updatedCrag.approach;
+    crag.img = updatedCrag.img;
+    await crag.save();
+  },
 };
