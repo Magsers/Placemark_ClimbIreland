@@ -11,7 +11,6 @@ export const adminController = {
           title: "Placemark Admin Dashboard",
           user: loggedInUser,
           users: users,
-          usercrags: users.crags.length,
           cragCount: crags.length,
           routeCount: routes.length,
         };
