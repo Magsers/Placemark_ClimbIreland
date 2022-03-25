@@ -87,21 +87,21 @@ export const cragApi = {
     tags: ["api"],
     description: "Delete a crag",
     validate: { params: { id: IdSpec }, failAction: validationError },
-},
+  },
 
-deleteAll: {
-  auth: {
-    strategy: "jwt",
+  deleteAll: {
+    auth: {
+      strategy: "jwt",
+    },
+    handler: async function (request, h) {
+      try {
+        await db.cragStore.deleteAllCrags();
+        return h.response().code(204);
+      } catch (err) {
+        return Boom.serverUnavailable("Database Error");
+      }
+    },
+    tags: ["api"],
+    description: "Delete all CragApi",
   },
-  handler: async function (request, h) {
-    try {
-      await db.cragStore.deleteAllCrags();
-      return h.response().code(204);
-    } catch (err) {
-      return Boom.serverUnavailable("Database Error");
-    }
-  },
-  tags: ["api"],
-  description: "Delete all CragApi",
- },
 } 

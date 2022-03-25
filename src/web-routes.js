@@ -30,5 +30,5 @@ export const webRoutes = [
   { method: "POST", path: "/crag/{id}/updateroute/{routeid}", config: cragController.updateRoute },
 
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
-  { method: "POST", path: "/crag/{id}/uploadimage", config: cragController.uploadImage },
+  { method: "POST", path: "/crag/{id}/uploadimage", config: cragController.uploadImage }
 ]; 

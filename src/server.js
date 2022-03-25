@@ -43,12 +43,12 @@ async function init() {
   const server = Hapi.server({
     port: process.env.PORT || 3000,
   });
-  
+
   await server.register(Vision);
   await server.register(Inert);
   await server.register(Cookie);
   await server.register(jwt);
-  
+
   await server.register([
     Inert,
     Vision,
@@ -78,7 +78,7 @@ async function init() {
     },
     redirectTo: "/",
     validateFunc: accountsController.validate,
-  }); 
+  });
   server.auth.strategy("jwt", "jwt", {
     key: process.env.cookie_password,
     validate: validate,
