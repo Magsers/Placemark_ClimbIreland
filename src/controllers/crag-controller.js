@@ -101,6 +101,6 @@ export const cragController = {
       maxBytes: 209715200,
       parse: true
     }
-  }
+  },
 
 };
