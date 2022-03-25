@@ -27,7 +27,7 @@ export const webRoutes = [
   { method: "GET", path: "/dashboard/deleteCrag/{id}", config: dashboardController.deleteCrag },
   { method: "GET", path: "/crag/{id}/deleteroute/{routeid}", config: cragController.deleteRoute },
   { method: "GET", path: "/crag/{id}/editroute/{routeid}", config: cragController.showEditRoute },
-  { method: "GET", path: "/crag/{id}/updateroute/{routeid}", config: cragController.updateRoute },
+  { method: "POST", path: "/crag/{id}/updateroute/{routeid}", config: cragController.updateRoute },
 
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
   { method: "POST", path: "/crag/{id}/uploadimage", config: cragController.uploadImage },

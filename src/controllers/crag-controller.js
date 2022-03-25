@@ -49,7 +49,7 @@ export const cragController = {
 
   showEditRoute: {
     handler: async function (request, h) {
-    const loggedInUser = request.auth.credentials;
+    // const loggedInUser = request.auth.credentials;
     const crag = await db.cragStore.getCragById(request.params.id);
     const route = await db.routeStore.getRouteById(request.params.routeid);
         const viewData = {
@@ -66,6 +66,7 @@ export const cragController = {
     const crag = await db.cragStore.getCragById(request.params.id);
     const route = await db.routeStore.getRouteById(request.params.routeid);
     const updatedRoute = {
+      _id: route._id,
       name: request.payload.name,
       grade: request.payload.grade,
       height: Number(request.payload.height),
@@ -73,7 +74,7 @@ export const cragController = {
       description: request.payload.description,
       datedone: request.payload.datedone,
     };
-    await db.routeStore.updateRoute(route._id, updatedRoute);
+    await db.routeStore.updateRoute(updatedRoute);
     return h.redirect(`/crag/${crag._id}`);
     },
   },

@@ -39,7 +39,8 @@ export const routeMongoStore = {
     await Route.deleteMany({});
   },
 
-  async updateRoute(route, updatedRoute) {
+  async updateRoute(updatedRoute) {
+    const route = await Route.findOne({ _id: updatedRoute._id });
     route.name = updatedRoute.name;
     route.grade = updatedRoute.grade;
     route.height = updatedRoute.height;
