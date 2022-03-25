@@ -1,48 +1,49 @@
-
-
 <form name="editroute" class="box" action="/crag/{{crag._id}}/updateroute/{{route._id}}" method="POST">
- <section><label>Edit Route Details:</label></section><br>
- <section>  <table class="table is-fullwidth">
-  <thead>
-    <tr>
-      <th>Route</th>
-      <th>Grade</th>
-      <th>Height</th>
-      <th>First Ascent</th>
-      <th>Description</th>
-      <th>Date Route Complete</th>
-    </tr></thead>
-    <tbody>
-      <td>{{route.name}}</td>
-      <td>{{route.grade}}</td>
-      <td>{{route.height}}</td>
-      <td>{{route.firstascent}}</td>
-      <td>{{route.description}}</td>
-      <td>{{route.datedone}}</td>
-    </tbody>
-  </table></section>
+  <section><label>Edit Route Details:</label></section><br>
+  <section>
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Route</th>
+          <th>Grade</th>
+          <th>Height</th>
+          <th>First Ascent</th>
+          <th>Description</th>
+          <th>Date Route Complete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td>{{route.name}}</td>
+        <td>{{route.grade}}</td>
+        <td>{{route.height}}</td>
+        <td>{{route.firstascent}}</td>
+        <td>{{route.description}}</td>
+        <td>{{route.datedone}}</td>
+      </tbody>
+    </table>
+  </section>
   <div class="field is-horizontal">
     <div class="field-body">
       <div class="field">
         <label>Route:</label>
-         <input placeholder="Route Name" type="text" value="{{route.name}}" name="name">
+        <input placeholder="Route Name" type="text" value="{{route.name}}" name="name">
       </div>
       <div class="field">
         <label class="label">Grade</label>
         <select type="text" placeholder="Select Grade" value={{route.grade}} name="grade">
-        <option value="Diff">Diff</option>
-        <option value="V Diff">V Diff</option>
-        <option value="Severe">Severe</option>
-        <option value="Hard Severe">Hard Severe</option>
-        <option value="Very Severe">Very Severe</option>
-        <option value="Hard Very Severe">Hard Very Severe</option>
-        <option value="E1">E1</option>
-        <option value="E2">E2</option>
-        <option value="E3">E3</option>
-        <option value="E4">E4</option>
-        <option value="E5">E5</option>
-        <option value="E6">E6</option>
-        <option value="E7">E7</option>
+          <option value="Diff">Diff</option>
+          <option value="V Diff">V Diff</option>
+          <option value="Severe">Severe</option>
+          <option value="Hard Severe">Hard Severe</option>
+          <option value="Very Severe">Very Severe</option>
+          <option value="Hard Very Severe">Hard Very Severe</option>
+          <option value="E1">E1</option>
+          <option value="E2">E2</option>
+          <option value="E3">E3</option>
+          <option value="E4">E4</option>
+          <option value="E5">E5</option>
+          <option value="E6">E6</option>
+          <option value="E7">E7</option>
         </select>
       </div>
       <div class="field">
@@ -50,19 +51,19 @@
         <input class="input" type="number" placeholder="Enter Height in metres" value={{route.height}} name="height">
       </div>
       <div class="field">
-         <label>First Ascent:</label>
-        <input class="input" type="text" placeholder="First Ascent (optional)" value="{{route.firstascent}}" name="firstascent">
+        <label>First Ascent:</label>
+        <input class="input" type="text" placeholder="First Ascent (optional)" value="{{route.firstascent}}"
+          name="firstascent">
       </div>
       <div class="field">
-         <label>Description:</label>
+        <label>Description:</label>
         <input class="input" type="text" placeholder="Description" value="{{route.description}}" name="description">
       </div>
       <div class="field">
-         <label>Date Route Complete:</label>
+        <label>Date Route Complete:</label>
         <input class="input" type="text" placeholder="Date Route Complete" value="{{route.datedone}}" name="datedone">
       </div>
-    </div> 
+    </div>
   </div>
   <button class="button is-primary">Save</button>
 </form>
-

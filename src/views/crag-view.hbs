@@ -1,28 +1,26 @@
 {{> menu}}
 
-<section class="section columns is-vcentered" >
-  
-    <div class="column has-text-left">
-      <div id="cragtitle" class="title">
-        {{crag.title}}
-      </div>
-  <span class="is-inline">
-    <div> Latitude : {{crag.lat}}</div>
-    <div> Longitude : {{crag.lng}}</div>
-    <div> Approach : {{crag.approach}}</div>
-  </span>
+<section class="section columns is-vcentered">
+
+  <div class="column has-text-left">
+    <div id="cragtitle" class="title">
+      {{crag.title}}
+    </div>
+    <span class="is-inline">
+      <div> Latitude : {{crag.lat}}</div>
+      <div> Longitude : {{crag.lng}}</div>
+      <div> Approach : {{crag.approach}}</div>
+    </span>
     {{> list-routes}}
-  {{> add-route}}
+    {{> add-route}}
 
   </div>
 
-<div class="column">
-  {{> crag-image }}
-<p style="text-align:center;"><img alt="crag image" id="cragimg" width="400" height="300"/></p>
+  <div class="column">
+    {{> crag-image }}
+    <p style="text-align:center;"><img alt="crag image" id="cragimg" width="400" height="300" /></p>
   </div>
-</section>   
-
-{{> footer}}
+</section>
 
 
 <script>
@@ -38,36 +36,36 @@
     var ballykeefeimage = "/images/ballykeefe.jpg";
     var cragimage = "/images/crag.jpg";
     var cragstring = crag.innerText;
-    if (cragstring =="TheGap") {
+    if (cragstring == "TheGap") {
       document.getElementById(id).src = gapimage;
     }
-    else if (cragstring =="Burren") {
+    else if (cragstring == "Burren") {
       document.getElementById(id).src = burrenimage;
     }
-    else if (cragstring =="Fairhead") {
+    else if (cragstring == "Fairhead") {
       document.getElementById(id).src = fairheadimage;
     }
-    else if (cragstring =="Glendalough") {
+    else if (cragstring == "Glendalough") {
       document.getElementById(id).src = glenaloughimage;
     }
-    else if (cragstring =="Mournes") {
+    else if (cragstring == "Mournes") {
       document.getElementById(id).src = mournesimage;
     }
-    else if (cragstring =="Murlough") {
+    else if (cragstring == "Murlough") {
       document.getElementById(id).src = murloughimage;
     }
-    else if (cragstring =="Dalkey") {
+    else if (cragstring == "Dalkey") {
       document.getElementById(id).src = dalkeyimage;
     }
-     else if (cragstring =="Ballykeefe") {
+    else if (cragstring == "Ballykeefe") {
       document.getElementById(id).src = ballykeefeimage;
     }
     else {
       document.getElementById(id).src = cragimage;
     }
   }
-  </script>
+</script>
 
-  <script>
-      cragImage("cragimg");
-    </script>
+<script>
+  cragImage("cragimg");
+</script>

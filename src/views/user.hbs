@@ -1,12 +1,10 @@
- {{> admin-menu }}
- 
- <div class="column">
-    <h2>Personal Details</h2>
-    <p>Name {{user.firstName}} {{user.lastName}}</p>
-    <p>Email Address : {{user.email}}</p>
-    <p>Crags : {{user.crags.title}}</p>
-  </div>
+{{> admin-menu }}
+
+<div class="column">
+  <h2>Personal Details</h2>
+  <p>Name {{user.firstName}} {{user.lastName}}</p>
+  <p>Email Address : {{user.email}}</p>
+  <p>Crags : {{user.crags.title}}</p>
+</div>
 
 {{!-- {{> list-crags}} --}}
-
-{{> footer}}

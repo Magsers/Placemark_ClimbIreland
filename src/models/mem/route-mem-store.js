@@ -40,12 +40,14 @@ export const routeMemStore = {
     routes = [];
   },
 
-  async updateRoute(route, updatedRoute) {
-    route.name = updatedRoute.name;
-    route.grade = updatedRoute.grade;
-    route.height = updatedRoute.height;
-    route.firstascent = updatedRoute.firstascent;
-    route.description = updatedRoute.description;
-    route.datedone = updatedRoute.datedone;
+  async updateRoute(updatedRoute) {
+    const updatedroute = routes.find((route) => route._id === updatedRoute._id);
+    updatedroute.name = updatedRoute.name;
+    updatedroute.grade = updatedRoute.grade;
+    updatedroute.height = updatedRoute.height;
+    updatedroute.firstascent = updatedRoute.firstascent;
+    updatedroute.description = updatedRoute.description;
+    updatedroute.datedone = updatedRoute.datedone;
+    return updatedroute;
   },
 };
