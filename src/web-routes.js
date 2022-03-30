@@ -29,6 +29,9 @@ export const webRoutes = [
   { method: "GET", path: "/crag/{id}/editroute/{routeid}", config: cragController.showEditRoute },
   { method: "POST", path: "/crag/{id}/updateroute/{routeid}", config: cragController.updateRoute },
 
+  { method: "GET", path: "/dashboard/editcrag/{id}", config: dashboardController.showEditCrag },
+  { method: "POST", path: "/dashboard/updatecrag/{id}", config: dashboardController.updateCrag },
+
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
   { method: "POST", path: "/crag/{id}/uploadimage", config: cragController.uploadImage }
 ]; 

@@ -45,13 +45,14 @@ export const routeJsonStore = {
   },
 
   async updateRoute(updatedRoute) {
-    const route = db.routes.findOne({ _id: updatedRoute._id });
+    await db.read();
+    const route = db.data.routes.find((oldroute) => oldroute._id === updatedRoute._id);
     route.name = updatedRoute.name;
     route.grade = updatedRoute.grade;
     route.height = updatedRoute.height;
     route.firstascent = updatedRoute.firstascent;
     route.description = updatedRoute.description;
-    route.datedone = datedone;
+    route.datedone = updatedRoute.datedone;
     await db.write();
   },
 };

@@ -1,0 +1,49 @@
+<form name="editcrag" class="box" action="/dashboard/{{id}}/updatecrag/{{crag._id}}" method="POST">
+  <section><label>Edit Crag Details:</label></section><br>
+  <section>
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Crag</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Approach</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td>{{crag.title}}</td>
+        <td>{{crag.lat}}</td>
+        <td>{{crag.lng}}</td>
+        <td>{{crag.approach}}</td>
+        <td>{{crag.img}}</td>
+      </tbody>
+    </table>
+  </section>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <label>Crag:</label>
+        <input placeholder="Crag" type="text" value="{{crag.title}}" name="title">
+      </div>
+      <div class="field">
+        <label>Latitude:</label>
+        <input class="input" type="number" placeholder="Latitude" value={{crag.lat}} name="lat">
+      </div>
+      <div class="field">
+        <label>Longitude:</label>
+        <input class="input" type="text" placeholder="Longitude" value="{{crag.lng}}"
+          name="lng">
+      </div>
+      <div class="field">
+        <label>Approach:</label>
+        <input class="input" type="text" placeholder="Approach" value="{{crag.approach}}" name="approach">
+      </div>
+       <div class="field">
+        <label>Image:</label>
+        <input class="input" type="file" placeholder="Image" value="{{crag.img}}" name="img">
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">Save</button>
+</form>

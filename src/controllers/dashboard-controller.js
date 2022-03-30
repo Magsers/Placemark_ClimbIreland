@@ -45,4 +45,35 @@ export const dashboardController = {
     return h.redirect("/dashboard");
     },
   },
+
+  showEditCrag: {
+    handler: async function (request, h) {
+    const loggedInUser = request.auth.credentials;
+    const crag = await db.cragStore.getCragById(request.params.id);
+      const viewData = {
+          title: "Edit Crag",
+          user: loggedInUser,
+          crag: crag,
+        };
+        return h.view("edit-crag", viewData);
+      },
+    },
+  
+  updateCrag: {
+    handler: async function (request, h) {
+    const loggedInUser = request.auth.credentials;      
+    const crag = await db.cragStore.getCragById(request.params.id);
+    const updatedCrag = {
+      _id: crag._id,
+      title: request.payload.title,
+      lat: Number(request.payload.lat),
+      lng: Number(request.payload.lng),
+      approach: request.payload.approach,
+      // userid: loggedInUser._id,
+    };
+    await db.cragStore.updateCrag(updatedCrag);
+    return h.redirect(`/dashboard/${loggedInUser._id}`);
+    },
+  },
+
 };

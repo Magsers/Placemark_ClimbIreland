@@ -7,6 +7,14 @@
       "approach": "Abseil",
       "_id": "19592e71-88ee-466e-b4b7-96e78dc55bb6",
       "routes": []
+    },
+    {
+      "userid": "4b1e8681-7a7b-49fe-88de-36f5f0d4303c",
+      "title": "Burren",
+      "lat": 53.05,
+      "lng": -9.35,
+      "approach": "Path",
+      "_id": "d1075071-31e2-4993-916a-6ef59be16e52"
     }
   ]
 }
